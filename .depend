@@ -1,0 +1,36 @@
+BUILD/schema_sats.o : HATS/x.hats
+BUILD/basics_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/stamp0_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/symbol_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/label0_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/locinfo_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/lexing_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/filpath_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/dynexp0_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/staexp0_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/dynexp1_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/staexp1_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/statyp2_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/staexp2_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/dynexp2_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/dynexp3_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/fixity_sats.o : HATS/x.hats SATS/schema.sats
+BUILD/schema0_sats.o : 
+BUILD/schema_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/basics_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/stamp0_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/symbol_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/label0_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/locinfo_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/lexing_token_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/filpath_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/staexp0_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/dynexp0_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/staexp1_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/dynexp1_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/statyp2_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/staexp2_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/dynexp2_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/dynexp3_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats
+BUILD/schema0_dats.o : HATS/libxatsopt.hats HATS/libxnameof.hats HATS/libxargsof.hats SATS/schema.sats SATS/basics.sats SATS/fixity.sats SATS/label0.sats SATS/locinfo.sats SATS/lexing.sats SATS/stamp0.sats SATS/symbol.sats SATS/filpath.sats SATS/staexp0.sats SATS/dynexp0.sats SATS/staexp1.sats SATS/dynexp1.sats SATS/statyp2.sats SATS/staexp2.sats SATS/dynexp2.sats SATS/dynexp3.sats SATS/schema0.sats DATS/schema.dats DATS/basics.dats DATS/label0.dats DATS/locinfo.dats DATS/lexing_token.dats DATS/stamp0.dats DATS/symbol.dats DATS/filpath.dats DATS/staexp0.dats DATS/dynexp0.dats DATS/staexp1.dats DATS/dynexp1.dats DATS/statyp2.dats DATS/staexp2.dats DATS/dynexp2.dats DATS/dynexp3.dats
+BUILD/xschema_dats.o : SATS/schema.sats SATS/basics.sats SATS/fixity.sats SATS/label0.sats SATS/locinfo.sats SATS/lexing.sats SATS/stamp0.sats SATS/symbol.sats SATS/filpath.sats SATS/staexp0.sats SATS/dynexp0.sats SATS/staexp1.sats SATS/dynexp1.sats SATS/statyp2.sats SATS/staexp2.sats SATS/dynexp2.sats SATS/dynexp3.sats SATS/schema0.sats
