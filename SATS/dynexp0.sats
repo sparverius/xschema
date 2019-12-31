@@ -5,10 +5,10 @@
 
 fun{a:type} schema_dl0abeled : schema_type(dl0abeled(a))
 
-fun{}(*{}*) schema_labd0patlst : schema_type(labd0patlst)
+fun{} schema_labd0patlst : schema_type(labd0patlst)
 overload schema with schema_labd0patlst
 
-fun{}(*{}*) schema_labd0explst : schema_type(labd0explst)
+fun{} schema_labd0explst : schema_type(labd0explst)
 overload schema with schema_labd0explst
 
 fun{} schema_q0arg : schema_type(q0arg)
@@ -33,8 +33,12 @@ overload schema with schema_ti0arglst
 
 fun{} schema_a0typ : schema_type(a0typ)
 fun{} schema_a0typlst : schema_type(a0typlst)
+fun{} schema_a0typopt : schema_type(a0typopt)
+fun{} schema_a0typlstopt : schema_type(a0typlstopt)
 overload schema with schema_a0typ
 overload schema with schema_a0typlst
+overload schema with schema_a0typopt
+overload schema with schema_a0typlstopt
 
 fun{} schema_d0arg : schema_type(d0arg)
 fun{} schema_d0arglst : schema_type(d0arglst)

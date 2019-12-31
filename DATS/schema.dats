@@ -12,7 +12,11 @@ absreimpl ret_list_type_t
 
 #include "./global.dats"
 
-implement
+
+implement{} scm$lst() = false
+implement{} scm$opt() = false
+
+implement{}
 fprint_scmrec(out, styp) =
 {
 val () = fprint!(out, "{", "\n", " ")
@@ -25,7 +29,10 @@ list_iforeach<string>(styp.args) where
   list_iforeach$fwork<string><env>(i, x, env) =
     (
       (if i > 0 then fprint!(out, ", "));
-      fprint!(out, "\"", x,"\"")
+      (if scm$lst<>() then fprint!(out, "["));
+      fprint!(out, "\"", x,"\"");
+      (if scm$lst<>() then fprint!(out, "]"));
+      (if scm$opt<>() then fprint!(out, "?"))
     )
 end
 )
@@ -33,9 +40,9 @@ val () = fprint!(out, "]")
 val () = fprint!(out, "\n", "}")
 }
 
-implement
+implement{}
 print_scmrec(x) = fprint_scmrec(stdout_ref, x)
-implement
+implement{}
 prerr_scmrec(x) = fprint_scmrec(stderr_ref, x)
 
 implement
@@ -59,6 +66,7 @@ schema_tag_foreach(xs) =
       println!(schema_tag_val<a>(x))
   end
 }
+
 
 (*
 implement{a}

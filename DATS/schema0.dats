@@ -902,6 +902,7 @@ d3cs = trans33_declist(d3cs)
 //
 (* val () = println!("SHOW") *)
 val () = println!("\n", "d0ecl")
+(*
 val () = (
   list_foreach<d0ecl>(d0cs) where
     implement(env)
@@ -913,6 +914,9 @@ val () = (
     }
   end
 )
+*)
+val () = schema_tag_foreach<d0ecl>(d0cs)
+
 val () = println!("\n", "d1ecl")
 val () = (
   list_foreach<d1ecl>(d1cs) where
@@ -948,44 +952,6 @@ val () = (
 )
 
 
-#include "./ALL.dats"
-
-val () =
-{
-val () = println!("\n", "dummy_dctkind")
-val () = println!(schema(dummy_dctkind))
-(* dctkinds *)
-(* val () = schema_foreach<dctkind>(dctkinds) *)
-val () = println!("\n", "dctkinds")
-val () = schema_tag_foreach<dctkind>(dctkinds)
-
-(* dummy_valkind *)
-(* valkinds *)
-
-(* dummy_funkind *)
-(* funkinds *)
-
-(* dummy_impkind *)
-(* impkinds *)
-
-(* dummy_funclo2 *)
-(* funclo2s *)
-val () = println!("\n", "tnodes")
-val () = schema_tag_foreach<tnode>(tnodes)
-
-val () = println!("\n", "tnodes")
-val () = schema_tag_foreach<tnode>(tnodes)
-
-val () = println!("\n", "s0exps")
-val () = schema_tag_foreach<s0exp_node>(s0exps)
-
-}
-
-(*
-dummy_token
-dummy_tokenopt
-tnodes
-*)
 
 
 
@@ -1475,9 +1441,640 @@ end // end of [process_cmdline2]
 //
 in (* in-of-local *)
 
+fun test_schema(): void =
+{
+#include "./ALL.dats"
+
+(*
+macdef showopt(nm, lst) =
+  println!("\n", ,(nm), "\n", schema(,(lst))) where
+    implement scm$opt<>() = true end
+*)
+
+
+val () =
+{
+(*
+val () = println!("\n", "dummy_dctkind")
+val () = println!(schema(dummy_dctkind))
+(* dctkinds *)
+(* val () = schema_foreach<dctkind>(dctkinds) *)
+val () = println!("\n", "dctkinds")
+val () = schema_tag_foreach<dctkind>(dctkinds)
+*)
+(*
+val () = println!("\n\n", "************* LOCATION", "\n")
+
+val () = println!("\n", "location")
+val () = println!(schema_location(dummy_loc))
+*)
+
+val () = println!("\n\n", "************* SYMBOL", "\n")
+
+val () = println!("\n", "symbol")
+val () = println!(schema_symbol(dummy_symbol))
+
+
+val () = println!("\n\n", "************* LABEL", "\n")
+
+val () = println!("\n", "labels")
+(* val () = println!(schema_tag_label(dummy_label)) *)
+val () = schema_tag_foreach<label>(labels)
+
+val () = println!("\n\n", "************* BASICS", "\n")
+
+(* dummy_valkind *)
+(* valkinds *)
+
+
+val () = println!("\n", "valkinds")
+val () = schema_tag_foreach<valkind>(valkinds)
+
+
+(* dummy_funkind *)
+(* funkinds *)
+val () = println!("\n", "funkinds")
+val () = schema_tag_foreach<funkind>(funkinds)
+
+
+(* dummy_impkind *)
+(* impkinds *)
+val () = println!("\n", "impkinds")
+val () = schema_tag_foreach<impkind>(impkinds)
+
+
+(* dummy_funclo2 *)
+(* funclo2s *)
+val () = println!("\n", "funclo2s")
+val () = schema_tag_foreach<funclo2>(funclo2s)
+
+
+val () = println!("\n\n", "************* LEXING", "\n")
+
+
+val () = println!("\n", "tnodes")
+val () = schema_tag_foreach<tnode>(tnodes)
+
+val () = println!("\n", "token", "\n", schema(dummy_token))
+val () = println!("\n", "tokenopt", "\n", schema(dummy_tokenopt))
+  where implement scm$opt<>() = true end
+
+(*
+val () = println!("\n", "tnodes")
+val () = schema_tag_foreach<tnode>(tnodes)
+*)
+val () = println!("\n\n", "************* STAEXP0", "\n")
+
+
+(*
+val () = println!("\n", "s0exps")
+val () = schema_tag_foreach<s0exp_node>(s0exps)
+*)
+
+val () =
+(
+println!("\n", "g0explst", "\n", schema(dummy_g0explst));
+println!("\n", "sort0lst", "\n", schema(dummy_sort0lst));
+println!("\n", "s0rtconlst", "\n", schema(dummy_s0rtconlst));
+println!("\n", "d0tsortlst", "\n", schema(dummy_d0tsortlst));
+println!("\n", "s0arglst", "\n", schema(dummy_s0arglst));
+println!("\n", "s0marglst", "\n", schema(dummy_s0marglst));
+println!("\n", "t0arglst", "\n", schema(dummy_t0arglst));
+println!("\n", "t0marglst", "\n", schema(dummy_t0marglst));
+println!("\n", "s0qualst", "\n", schema(dummy_s0qualst));
+println!("\n", "s0unilst", "\n", schema(dummy_s0unilst));
+println!("\n", "s0explst", "\n", schema(dummy_s0explst));
+println!("\n", "d0atconlst", "\n", schema(dummy_d0atconlst))
+)
+where implement scm$lst<>() = true end
+
+val () =
+(
+println!("\n", "s0expopt", "\n", schema(dummy_s0expopt))
+)
+where implement scm$opt<>() = true end
+
+(*
+dummy_t0int
+t0ints
+*)
+val () = println!("\n", "t0ints")
+val () = schema_tag_foreach<t0int_node>(t0ints)
+(*
+dummy_t0chr
+t0chrs
+*)
+val () = println!("\n", "t0chrs")
+val () = schema_tag_foreach<t0chr_node>(t0chrs)
+(*
+dummy_t0flt
+t0flts
+*)
+val () = println!("\n", "t0flts")
+val () = schema_tag_foreach<t0flt_node>(t0flts)
+(*
+dummy_t0str
+t0strs
+*)
+val () = println!("\n", "t0strs")
+val () = schema_tag_foreach<t0str_node>(t0strs)
+(*
+dummy_i0dnt
+dummy_i0dntlst
+i0dnts
+*)
+val () = println!("\n", "i0dnts")
+val () = schema_tag_foreach<i0dnt_node>(i0dnts)
+(*
+(* dummy_g0eid *)
+(* dummy_s0tid *)
+(* dummy_s0eid *)
+(* dummy_d0pid *)
+(* dummy_d0eid *)
+*)
+(*
+dummy_l0abl
+l0abls
+*)
+val () = println!("\n", "l0abls")
+val () = schema_tag_foreach<l0abl_node>(l0abls)
+(*
+dummy_s0ymb
+s0ymbs
+*)
+val () = println!("\n", "s0ymbs")
+val () = schema_tag_foreach<s0ymb_node>(s0ymbs)
+(*
+dummy_sq0eid
+sq0eids
+*)
+val () = println!("\n", "sq0eids")
+val () = schema_tag_foreach<sq0eid>(sq0eids)
+(*
+dummy_dq0eid
+dq0eids
+*)
+val () = println!("\n", "dq0eids")
+val () = schema_tag_foreach<dq0eid>(dq0eids)
+(*
+dummy_g0exp
+dummy_g0explst
+g0exps
+*)
+val () = println!("\n", "g0exps")
+val () = schema_tag_foreach<g0exp_node>(g0exps)
+(*
+dummy_g0arg
+dummy_g0arglst
+*)
+
+(*
+dummy_g0marg
+g0margs
+*)
+val () = println!("\n", "g0margs")
+val () = schema_tag_foreach<g0marg_node>(g0margs)
+(*
+dummy_sort0
+dummy_sort0lst
+dummy_sort0opt
+sort0s
+*)
+val () = println!("\n", "sort0s")
+val () = schema_tag_foreach<sort0_node>(sort0s)
+//
+(*
+dummy_s0rtcon
+dummy_s0rtconlst
+s0rtcons
+*)
+val () = println!("\n", "s0rtcons")
+val () = schema_tag_foreach<s0rtcon_node>(s0rtcons)
+//
+(*
+dummy_d0tsort
+dummy_d0tsortlst
+d0tsorts
+*)
+val () = println!("\n", "d0tsorts")
+val () = schema_tag_foreach<d0tsort_node>(d0tsorts)
+//
+(*
+dummy_s0rtdef
+s0rtdefs
+*)
+val () = println!("\n", "s0rtdefs")
+val () = schema_tag_foreach<s0rtdef_node>(s0rtdefs)
+(*
+dummy_s0arg
+dummy_s0arglst
+s0args
+*)
+val () = println!("\n", "s0args")
+val () = schema_tag_foreach<s0arg_node>(s0args)
+//
+(*
+dummy_s0marg
+dummy_s0marglst
+s0margs
+*)
+val () = println!("\n", "s0margs")
+val () = schema_tag_foreach<s0marg_node>(s0margs)
+//
+(*
+dummy_t0arg
+dummy_t0arglst
+t0args
+*)
+val () = println!("\n", "t0args")
+val () = schema_tag_foreach<t0arg_node>(t0args)
+//
+(*
+dummy_t0marg
+dummy_t0marglst
+t0margs
+*)
+val () = println!("\n", "t0margs")
+val () = schema_tag_foreach<t0marg_node>(t0margs)
+//
+(*
+dummy_s0qua
+dummy_s0qualst
+s0quas
+*)
+val () = println!("\n", "s0quas")
+val () = schema_tag_foreach<s0qua_node>(s0quas)
+//
+(*
+dummy_s0uni
+dummy_s0unilst
+s0unis
+*)
+val () = println!("\n", "s0unis")
+val () = schema_tag_foreach<s0uni_node>(s0unis)
+//
+(*
+dummy_s0exp
+dummy_s0explst
+dummy_s0expopt
+s0exps
+*)
+val () = println!("\n", "s0exps")
+val () = schema_tag_foreach<s0exp_node>(s0exps)
+//
+//
+(*
+dummy_s0exp_RPAREN
+s0exp_RPARENs
+*)
+val () = println!("\n", "s0exp_RPARENs")
+val () = schema_tag_foreach<s0exp_RPAREN>(s0exp_RPARENs)
+
+(*
+dummy_labs0exp_RBRACE
+labs0exp_RBRACEs
+*)
+val () = println!("\n", "labs0exp_RBRACEs")
+val () = schema_tag_foreach<labs0exp_RBRACE>(labs0exp_RBRACEs)
+
+(*
+dummy_effs0expopt
+effs0expopts
+*)
+val () = println!("\n", "effs0expopts")
+val () = schema_tag_foreach<effs0expopt>(effs0expopts)
+
+(*
+dummy_d0atcon
+dummy_d0atconlst
+d0atcons
+*)
+val () = println!("\n", "d0atcons")
+val () = schema_tag_foreach<d0atcon_node>(d0atcons)
+//
+//
+(*
+dummy_d0atype
+d0atypes
+*)
+val () = println!("\n", "d0atypes")
+val () = schema_tag_foreach<d0atype_node>(d0atypes)
+
+
+val () = println!("\n\n", "************* DYNEXP0", "\n")
+
+(*
+val () = println!("\n", "d0exps")
+val () = schema_tag_foreach<d0exp_node>(d0exps)
+
+val () = println!("\n", "d0claulst", "\n", schema(dummy_d0claulst))
+*)
+
+
+val () =
+(
+println!("\n", "q0arglst", "\n", schema(dummy_q0arglst));
+println!("\n", "sq0arglst", "\n", schema(dummy_sq0arglst));
+println!("\n", "ti0arglst", "\n", schema(dummy_ti0arglst));
+println!("\n", "a0typlst", "\n", schema(dummy_a0typlst));
+println!("\n", "q0arglst", "\n", schema(dummy_q0arglst));
+println!("\n", "f0arglst", "\n", schema(dummy_f0arglst));
+println!("\n", "d0patlst", "\n", schema(dummy_d0patlst));
+println!("\n", "labd0patlst", "\n", schema(dummy_labd0patlst));
+println!("\n", "d0explst", "\n", schema(dummy_d0explst));
+println!("\n", "d0gualst", "\n", schema(dummy_d0gualst));
+println!("\n", "d0patlst", "\n", schema(dummy_d0patlst));
+println!("\n", "d0claulst", "\n", schema(dummy_d0claulst));
+println!("\n", "v0aldeclist", "\n", schema(dummy_v0aldeclist));
+println!("\n", "v0ardeclist", "\n", schema(dummy_v0ardeclist));
+println!("\n", "f0undeclist", "\n", schema(dummy_f0undeclist));
+println!("\n", "d0cstdeclist", "\n", schema(dummy_d0cstdeclist));
+println!("\n", "d0eclist", "\n", schema(dummy_d0eclist))
+
+)
+where implement scm$lst<>() = true end
+
+
+val () =
+(
+println!("\n", "a0typopt", "\n", schema(dummy_a0typopt));
+println!("\n", "a0typlstopt", "\n", schema(dummy_a0typlstopt));
+println!("\n", "d0expopt", "\n", schema(dummy_d0expopt))
+)
+where implement scm$opt<>() = true end
+
+fun{a:type}
+showlst(str: string, x: List0(a)): void =
+(
+  println!("\n", str);
+  schema_tag_foreach<a>(x)
+)
+
+(*
+dummy_q0arglst
+dummy_q0arg
+*)
+(*
+val () = println!("\n", "q0args")
+val () = schema_tag_foreach<q0arg_node>(q0args)
+*)
+val () = println!("\n", schema(dummy_q0arg))
+//
+val () = showlst<q0arg_node>("q0arg_node", q0args)
+//
+(*
+dummy_sq0arglst
+dummy_sq0arg
+sq0args
+*)
+val () = println!("\n", schema(dummy_sq0arg))
+//
+val () = showlst<sq0arg_node>("sq0arg_node", sq0args)
+(*
+dummy_tq0arg
+dummy_tq0arglst
+tq0args
+*)
+val () = println!("\n", schema(dummy_tq0arg))
+//
+val () = showlst<tq0arg_node>("tq0arg_node", tq0args)
+(*
+dummy_ti0arglst
+dummy_ti0arg
+ti0args
+*)
+val () = println!("\n", schema(dummy_ti0arg))
+//
+val () = showlst<ti0arg_node>("ti0arg_node", ti0args)
+(*
+dummy_a0typlst
+dummy_a0typopt
+dummy_a0typlstopt
+dummy_a0typ
+a0typs
+*)
+val () = println!("\n", schema(dummy_a0typ))
+//
+val () = showlst<a0typ_node>("a0typ_node", a0typs)
+(*
+dummy_d0arglst
+dummy_d0arg
+d0args
+*)
+val () = println!("\n", schema(dummy_d0arg))
+//
+val () = showlst<d0arg_node>("d0arg_node", d0args)
+(*
+dummy_f0arglst
+dummy_f0arg
+f0args
+*)
+val () = println!("\n", schema(dummy_f0arg))
+//
+val () = showlst<f0arg_node>("f0arg_node", f0args)
+(*
+dummy_labd0pat_RBRACE
+labd0pat_RBRACEs
+*)
+val () = showlst<labd0pat_RBRACE>("labd0pat_RBRACE", labd0pat_RBRACEs)
+(*
+dummy_d0pat_RPAREN
+d0pat_RPARENs
+*)
+val () = showlst<d0pat_RPAREN>("d0pat_RPAREN", d0pat_RPARENs)
+(*
+dummy_d0patlst
+dummy_d0pat
+d0pats
+*)
+val () = println!("\n", schema(dummy_d0pat))
+//
+val () = showlst<d0pat_node>("d0pat_node", d0pats)
+(*
+dummy_labd0patlst
+dummy_labd0pat
+*)
+//
+(*
+dummy_d0exp_RPAREN
+d0exp_RPARENs
+*)
+val () = showlst<d0exp_RPAREN>("d0exp_RPAREN", d0exp_RPARENs)
+(*
+dummy_labd0exp_RBRACE
+labd0exp_RBRACEs
+*)
+val () = showlst<labd0exp_RBRACE>("labd0exp_RBRACE", labd0exp_RBRACEs)
+(*
+dummy_d0exp_THEN
+d0exp_THENs
+*)
+val () = showlst<d0exp_THEN>("d0exp_THEN", d0exp_THENs)
+(*
+dummy_d0exp_ELSE
+d0exp_ELSEs
+*)
+val () = showlst<d0exp_ELSE>("d0exp_ELSE", d0exp_ELSEs)
+(*
+dummy_endwhere
+endwheres
+*)
+val () = showlst<endwhere>("endwhere", endwheres)
+(*
+dummy_d0eclseq_WHERE
+d0eclseq_WHEREs
+*)
+val () = showlst<d0eclseq_WHERE>("d0eclseq_WHERE", d0eclseq_WHEREs)
+(*
+dummy_f0unarrow
+f0unarrows
+*)
+val () = showlst<f0unarrow>("f0unarrow", f0unarrows)
+(*
+dummy_d0explst
+dummy_d0expopt
+dummy_d0exp
+d0exps
+*)
+val () = println!("\n", schema(dummy_d0exp))
+//
+val () = showlst<d0exp_node>("d0exp_node", d0exps)
+(*
+dummy_labd0explst
+dummy_labd0exp
+*)
+//
+(*
+dummy_d0gualst
+dummy_d0gua
+d0guas
+*)
+val () = println!("\n", schema(dummy_d0gua))
+//
+val () = showlst<d0gua_node>("d0gua_node", d0guas)
+(*
+dummy_d0patlst
+dummy_d0gpat
+d0gpats
+*)
+val () = println!("\n", schema(dummy_d0gpat))
+//
+val () = showlst<d0gpat_node>("d0gpat_node", d0gpats)
+(*
+dummy_d0claulst
+dummy_d0clau
+d0claus
+*)
+val () = println!("\n", schema(dummy_d0clau))
+//
+val () = showlst<d0clau_node>("d0clau_node", d0claus)
+(*
+dummy_decmodopt
+decmodopts
+*)
+val () = showlst<decmodopt>("decmodopt", decmodopts)
+(*
+dummy_teqd0expopt
+teqd0expopts
+*)
+val () = showlst<teqd0expopt>("teqd0expopt", teqd0expopts)
+(*
+dummy_wths0expopt
+wths0expopts
+*)
+val () = showlst<wths0expopt>("wths0expopt", wths0expopts)
+(*
+dummy_d0pidopt
+*)
+//
+(*
+dummy_v0aldecl
+dummy_v0aldeclist
+v0aldecls
+*)
+val () = showlst<v0aldecl>("v0aldecl", v0aldecls)
+(*
+dummy_v0ardecl
+dummy_v0ardeclist
+v0ardecls
+*)
+val () = showlst<v0ardecl>("v0ardecl", v0ardecls)
+(*
+dummy_f0undecl
+dummy_f0undeclist
+f0undecls
+*)
+val () = showlst<f0undecl>("f0undecl", f0undecls)
+(*
+dummy_d0cstdeclist
+dummy_d0cstdecl
+d0cstdecls
+*)
+val () = showlst<d0cstdecl>("d0cstdecl", d0cstdecls)
+(*
+dummy_signint
+signints
+*)
+val () = showlst<signint>("signint", signints)
+(*
+dummy_precmod
+precmods
+*)
+val () = showlst<precmod>("precmod", precmods)
+(*
+dummy_precopt
+precopts
+*)
+val () = showlst<precopt>("precopt", precopts)
+(*
+dummy_abstdf0
+abstdf0s
+*)
+val () = showlst<abstdf0>("abstdf0", abstdf0s)
+(*
+dummy_g0expdef
+g0expdefs
+*)
+val () = showlst<g0expdef>("g0expdef", g0expdefs)
+(*
+dummy_d0macdef
+d0macdefs
+*)
+val () = showlst<d0macdef>("d0macdef", d0macdefs)
+(*
+dummy_wd0eclseq
+wd0eclseqs
+*)
+(* val () = println!("\n", schema(dummy_wd0eclseq)) *)
+//
+val () = showlst<wd0eclseq>("wd0eclseq", wd0eclseqs)
+(*
+dummy_d0eclist
+dummy_d0ecl
+d0ecls
+*)
+val () = println!("\n", schema(dummy_d0ecl))
+//
+val () = showlst<d0ecl_node>("d0ecl_node", d0ecls)
+
+
+
+
+}
+
+(*
+dummy_token
+dummy_tokenopt
+tnodes
+*)
+}
+
 implement
 schema0_main0
-  (argc, argv) = let
+  (argc, argv) = //let
+  test_schema()
+(*
+
 //
 val
 XATSHOME =
@@ -1527,6 +2124,7 @@ in
 if (st0.nxerror > 0) then $ERR.abort()
 //
 end // end of [xatsopt_main0]
+*)
 
 end // end of [local]
 

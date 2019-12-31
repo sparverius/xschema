@@ -6,6 +6,9 @@
 fun{} schema_token : schema_type(token)
 overload schema with schema_token
 
+fun{} schema_tokenopt : schema_type(tokenopt)
+overload schema with schema_tokenopt
+
 fun{} schema_tnode : schema_type(tnode)
 overload schema with schema_tnode
 
