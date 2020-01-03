@@ -20,7 +20,6 @@ in
 
 implement totype_tnode<> = nameof_tnode
 implement totype_token<> = nameof_token
-implement totype_token_tbox<> = nameof_token
 implement totype_tokenopt<> = nameof_inner_tokenopt //nameof_tokenopt
 implement totype_tokenlst<> = nameof_tokenlst
 
@@ -32,7 +31,6 @@ implement{} schema_tag_tnode(tk) = tags(tk)
 
 implement schema_val<token> = schema_token
 implement schema_val<tokenopt> = schema_tokenopt
-implement schema_val<token_tbox> = schema_token
 implement schema_val<tnode> = schema_tnode
 implement schema_tag_val<tnode> = schema_tag_tnode
 

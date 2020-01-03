@@ -2018,6 +2018,7 @@ val scm_tmp = make<tnode>("tnode", tnodes)
 val () = println!(scm_tmp)
 
 
+val () = println!("\n", schema(dummy_tq0arg))
 }
 
 (*
