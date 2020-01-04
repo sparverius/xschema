@@ -16,6 +16,7 @@ absreimpl ret_list_type_t
 implement{} scm$lst() = false
 implement{} scm$opt() = false
 
+(*
 implement{}
 fprint_scmrec(out, styp) =
 {
@@ -39,11 +40,12 @@ end
 val () = fprint!(out, "]")
 val () = fprint!(out, "\n", "}")
 }
+*)
 
 implement{}
-print_scmrec(x) = fprint_scmrec(stdout_ref, x)
+print_scmrec(x) = fprint_scmrec<>(stdout_ref, x)
 implement{}
-prerr_scmrec(x) = fprint_scmrec(stderr_ref, x)
+prerr_scmrec(x) = fprint_scmrec<>(stderr_ref, x)
 
 implement
 fprint_val<scmrec> = fprint_scmrec
@@ -83,9 +85,13 @@ schema_foreach(xs) = res where
 implement{}
 fprint_scmrec(out, styp) =
 {
-val () = fprint!(out, "{ \"name\"", ":", "\"", styp.name, "\", ")
+val () = fprint!(out, "\"", styp.name, "\"")
+(* val () = fprint!(out, "{ \"name\"", ":", "\"", styp.name, "\", ") *)
 (* val () = fprint!(out, "\"args\"", ":", " {") *)
-val () = fprint!(out, "\"args\"", ":", " [")
+
+val () = fprint!(out, ":", "[")
+(* val () = fprint!(out, "\"args\"", ":", " [") *)
+
 val x = (
 list_iforeach<string>(styp.args) where
   implement(env)
@@ -101,7 +107,8 @@ list_iforeach<string>(styp.args) where
 end
 )
 (* val () = fprint!(out, "} }") *)
-val () = fprint!(out, "] }")
+(* val () = fprint!(out, "] }") *)
+val () = fprint!(out, "]")
 }
 
 
@@ -205,14 +212,16 @@ end
 implement{}
 fprint_namedscm(out, xs) =
 {
-  val () = print!("{", "\"", xs.name, "\"", ":", "{")
+  val () = print!("\"", xs.name, "\"", ":", "{")
+  (* val () = print!("{", "\"", xs.name, "\"", ":", "{") *)
   val () = scmrec_foreach<>(xs.list) where
     implement
     scmrec_foreach$sep<>() = print!(",")
     implement
     scmrec_foreach$fwork<>(x) = print!(x)
   end
-  val () = print!("}}")
+  (* val () = print!("}}") *)
+  val () = print!("}")
 } where
   implement
   fprint_scmrec<>(out, styp) =

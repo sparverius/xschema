@@ -67,9 +67,6 @@ overload schema with schema_sort0
 overload schema with schema_sort0lst
 overload schema with schema_sort0opt
 
-fun{} schema_s0arglst : schema_type(s0arglst)
-overload schema with schema_s0arglst
-
 fun{} schema_s0rtcon : schema_type(s0rtcon)
 fun{} schema_s0rtconlst : schema_type(s0rtconlst)
 overload schema with schema_s0rtcon
@@ -84,7 +81,9 @@ fun{} schema_s0rtdef : schema_type(s0rtdef)
 overload schema with schema_s0rtdef
 
 fun{} schema_s0arg : schema_type(s0arg)
+fun{} schema_s0arglst : schema_type(s0arglst)
 overload schema with schema_s0arg
+overload schema with schema_s0arglst
 
 fun{} schema_s0marg : schema_type(s0marg)
 fun{} schema_s0marglst : schema_type(s0marglst)
@@ -228,43 +227,43 @@ fun{} schema_tag_s0arg_node : schema_type(s0arg_node)
 overload schema_tag with schema_tag_s0arg_node
 
 fun{} schema_s0arg_node : schema_type(s0arg_node)
-overload schema with schema_tag_s0arg_node
+overload schema with schema_s0arg_node
 
 fun{} schema_tag_s0marg_node : schema_type(s0marg_node)
 overload schema_tag with schema_tag_s0marg_node
 
 fun{} schema_s0marg_node : schema_type(s0marg_node)
-overload schema with schema_tag_s0marg_node
+overload schema with schema_s0marg_node
 
 fun{} schema_tag_t0arg_node : schema_type(t0arg_node)
 overload schema_tag with schema_tag_t0arg_node
 
 fun{} schema_t0arg_node : schema_type(t0arg_node)
-overload schema with schema_tag_t0arg_node
+overload schema with schema_t0arg_node
 
 fun{} schema_tag_t0marg_node : schema_type(t0marg_node)
 overload schema_tag with schema_tag_t0marg_node
 
 fun{} schema_t0marg_node : schema_type(t0marg_node)
-overload schema with schema_tag_t0marg_node
+overload schema with schema_t0marg_node
 
 fun{} schema_tag_s0qua_node : schema_type(s0qua_node)
 overload schema_tag with schema_tag_s0qua_node
 
 fun{} schema_s0qua_node : schema_type(s0qua_node)
-overload schema with schema_tag_s0qua_node
+overload schema with schema_s0qua_node
 
 fun{} schema_tag_s0uni_node : schema_type(s0uni_node)
 overload schema_tag with schema_tag_s0uni_node
 
 fun{} schema_s0uni_node : schema_type(s0uni_node)
-overload schema with schema_tag_s0uni_node
+overload schema with schema_s0uni_node
 
 fun{} schema_tag_s0exp_node : schema_type(s0exp_node)
 overload schema_tag with schema_tag_s0exp_node
 
 fun{} schema_s0exp_node : schema_type(s0exp_node)
-overload schema with schema_tag_s0exp_node
+overload schema with schema_s0exp_node
 
 fun{} schema_tag_s0exp_RPAREN : schema_type(s0exp_RPAREN)
 overload schema_tag with schema_tag_s0exp_RPAREN

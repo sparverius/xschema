@@ -1388,51 +1388,52 @@ val () = println!(schema_symbol(dummy_symbol))
 
 val () = println!("\n\n", "************* LABEL", "\n")
 
-val () = println!("\n", "labels")
+(* val () = println!("\n", "labels") *)
 (* val () = println!(schema_tag_label(dummy_label)) *)
-val () = to_schema_tag_foreach<label>(labels)
+(* val () = to_schema_tag_foreach<label>(labels) *)
+val scm_label = make<label>("label", labels)
+val () = println!(scm_label)
 
 val () = println!("\n\n", "************* BASICS", "\n")
 
 (* dummy_valkind *)
 (* valkinds *)
 
-val () = println!("\n", "valkinds")
-val () = to_schema_tag_foreach<valkind>(valkinds)
+(* val () = to_schema_tag_foreach<valkind>(valkinds) *)
+val scm_valkind = make<valkind>("valkind", valkinds)
+val () = println!(scm_valkind)
 
 
 (* dummy_funkind *)
 (* funkinds *)
-val () = println!("\n", "funkinds")
-val () = to_schema_tag_foreach<funkind>(funkinds)
+(* val () = to_schema_tag_foreach<funkind>(funkinds) *)
+val scm_funkind = make<funkind>("funkind", funkinds)
+val () = println!(scm_funkind)
 
 
 (* dummy_impkind *)
 (* impkinds *)
-val () = println!("\n", "impkinds")
-val () = to_schema_tag_foreach<impkind>(impkinds)
-
+(* val () = to_schema_tag_foreach<impkind>(impkinds) *)
+val scm_impkind = make<impkind>("impkind", impkinds)
+val () = println!(scm_impkind)
 
 (* dummy_funclo2 *)
 (* funclo2s *)
-val () = println!("\n", "funclo2s")
-val () = to_schema_tag_foreach<funclo2>(funclo2s)
+(* val () = to_schema_tag_foreach<funclo2>(funclo2s) *)
+val scm_funclo2 = make<funclo2>("funclo2", funclo2s)
+val () = println!(scm_funclo2)
 
 
 val () = println!("\n\n", "************* LEXING", "\n")
 
-
-val () = println!("\n", "tnodes")
-val () = to_schema_tag_foreach<tnode>(tnodes)
-
-val () = println!("\n", "token", "\n", schema(dummy_token))
-val () = println!("\n", "tokenopt", "\n", schema(dummy_tokenopt))
+val () = println!(schema(dummy_token))
+val () = println!(schema(dummy_tokenopt))
   where implement scm$opt<>() = true end
 
-(*
-val () = println!("\n", "tnodes")
-val () = to_schema_tag_foreach<tnode>(tnodes)
-*)
+(* val () = to_schema_tag_foreach<tnode>(tnodes) *)
+val scm_tnode = make<tnode>("tnode", tnodes)
+val () = println!(scm_tnode)
+
 val () = println!("\n\n", "************* STAEXP0", "\n")
 
 
@@ -1441,26 +1442,29 @@ val () = println!("\n", "s0exps")
 val () = to_schema_tag_foreach<s0exp_node>(s0exps)
 *)
 
+
+
+
 val () =
 (
-println!("\n", "g0explst", "\n", schema(dummy_g0explst));
-println!("\n", "sort0lst", "\n", schema(dummy_sort0lst));
-println!("\n", "s0rtconlst", "\n", schema(dummy_s0rtconlst));
-println!("\n", "d0tsortlst", "\n", schema(dummy_d0tsortlst));
-println!("\n", "s0arglst", "\n", schema(dummy_s0arglst));
-println!("\n", "s0marglst", "\n", schema(dummy_s0marglst));
-println!("\n", "t0arglst", "\n", schema(dummy_t0arglst));
-println!("\n", "t0marglst", "\n", schema(dummy_t0marglst));
-println!("\n", "s0qualst", "\n", schema(dummy_s0qualst));
-println!("\n", "s0unilst", "\n", schema(dummy_s0unilst));
-println!("\n", "s0explst", "\n", schema(dummy_s0explst));
-println!("\n", "d0atconlst", "\n", schema(dummy_d0atconlst))
+println!(schema(dummy_g0explst));
+println!(schema(dummy_sort0lst));
+println!(schema(dummy_s0rtconlst));
+println!(schema(dummy_d0tsortlst));
+println!(schema(dummy_s0arglst));
+println!(schema(dummy_s0marglst));
+println!(schema(dummy_t0arglst));
+println!(schema(dummy_t0marglst));
+println!(schema(dummy_s0qualst));
+println!(schema(dummy_s0unilst));
+println!(schema(dummy_s0explst));
+println!(schema(dummy_d0atconlst))
 )
 where implement scm$lst<>() = true end
 
 val () =
 (
-println!("\n", "s0expopt", "\n", schema(dummy_s0expopt))
+println!(schema(dummy_s0expopt))
 )
 where implement scm$opt<>() = true end
 
@@ -1468,33 +1472,38 @@ where implement scm$opt<>() = true end
 dummy_t0int
 t0ints
 *)
-val () = println!("\n", "t0ints")
-val () = to_schema_tag_foreach<t0int_node>(t0ints)
+(* val () = to_schema_tag_foreach<t0int_node>(t0ints) *)
+val scm_t0int_node = make<t0int_node>("t0int_node", t0ints)
+val () = println!(scm_t0int_node)
 (*
 dummy_t0chr
 t0chrs
 *)
-val () = println!("\n", "t0chrs")
-val () = to_schema_tag_foreach<t0chr_node>(t0chrs)
+(* val () = to_schema_tag_foreach<t0chr_node>(t0chrs) *)
+val scm_t0chr_node = make<t0chr_node>("t0chr_node", t0chrs)
+val () = println!(scm_t0chr_node)
 (*
 dummy_t0flt
 t0flts
 *)
-val () = println!("\n", "t0flts")
-val () = to_schema_tag_foreach<t0flt_node>(t0flts)
+(* val () = to_schema_tag_foreach<t0flt_node>(t0flts) *)
+val scm_t0flt_node = make<t0flt_node>("t0flt_node", t0flts)
+val () = println!(scm_t0flt_node)
 (*
 dummy_t0str
 t0strs
 *)
-val () = println!("\n", "t0strs")
-val () = to_schema_tag_foreach<t0str_node>(t0strs)
+(* val () = to_schema_tag_foreach<t0str_node>(t0strs) *)
+val scm_t0str_node = make<t0str_node>("t0str_node", t0strs)
+val () = println!(scm_t0str_node)
 (*
 dummy_i0dnt
 dummy_i0dntlst
 i0dnts
 *)
-val () = println!("\n", "i0dnts")
-val () = to_schema_tag_foreach<i0dnt_node>(i0dnts)
+(* val () = to_schema_tag_foreach<i0dnt_node>(i0dnts) *)
+val scm_i0dnt_node = make<i0dnt_node>("i0dnt_node", i0dnts)
+val () = println!(scm_i0dnt_node)
 (*
 (* dummy_g0eid *)
 (* dummy_s0tid *)
@@ -1506,33 +1515,38 @@ val () = to_schema_tag_foreach<i0dnt_node>(i0dnts)
 dummy_l0abl
 l0abls
 *)
-val () = println!("\n", "l0abls")
-val () = to_schema_tag_foreach<l0abl_node>(l0abls)
+(* val () = to_schema_tag_foreach<l0abl_node>(l0abls) *)
+val scm_l0abl_node = make<l0abl_node>("l0abl_node", l0abls)
+val () = println!(scm_l0abl_node)
 (*
 dummy_s0ymb
 s0ymbs
 *)
-val () = println!("\n", "s0ymbs")
-val () = to_schema_tag_foreach<s0ymb_node>(s0ymbs)
+(* val () = to_schema_tag_foreach<s0ymb_node>(s0ymbs) *)
+val scm_s0ymb_node = make<s0ymb_node>("s0ymb_node", s0ymbs)
+val () = println!(scm_s0ymb_node)
 (*
 dummy_sq0eid
 sq0eids
 *)
-val () = println!("\n", "sq0eids")
-val () = to_schema_tag_foreach<sq0eid>(sq0eids)
+(* val () = to_schema_tag_foreach<sq0eid>(sq0eids) *)
+val scm_sq0eid = make<sq0eid>("sq0eid", sq0eids)
+val () = println!(scm_sq0eid)
 (*
 dummy_dq0eid
 dq0eids
 *)
-val () = println!("\n", "dq0eids")
-val () = to_schema_tag_foreach<dq0eid>(dq0eids)
+(* val () = to_schema_tag_foreach<dq0eid>(dq0eids) *)
+val scm_dq0eid = make<dq0eid>("dq0eid", dq0eids)
+val () = println!(scm_dq0eid)
 (*
 dummy_g0exp
 dummy_g0explst
 g0exps
 *)
-val () = println!("\n", "g0exps")
-val () = to_schema_tag_foreach<g0exp_node>(g0exps)
+(* val () = to_schema_tag_foreach<g0exp_node>(g0exps) *)
+val scm_g0exp_node = make<g0exp_node>("g0exp_node", g0exps)
+val () = println!(scm_g0exp_node)
 (*
 dummy_g0arg
 dummy_g0arglst
@@ -1542,86 +1556,97 @@ dummy_g0arglst
 dummy_g0marg
 g0margs
 *)
-val () = println!("\n", "g0margs")
-val () = to_schema_tag_foreach<g0marg_node>(g0margs)
+(* val () = to_schema_tag_foreach<g0marg_node>(g0margs) *)
+val scm_g0marg_node = make<g0marg_node>("g0marg_node", g0margs)
+val () = println!(scm_g0marg_node)
 (*
 dummy_sort0
 dummy_sort0lst
 dummy_sort0opt
 sort0s
 *)
-val () = println!("\n", "sort0s")
-val () = to_schema_tag_foreach<sort0_node>(sort0s)
+(* val () = to_schema_tag_foreach<sort0_node>(sort0s) *)
+val scm_sort0_node = make<sort0_node>("sort0_node", sort0s)
+val () = println!(scm_sort0_node)
 //
 (*
 dummy_s0rtcon
 dummy_s0rtconlst
 s0rtcons
 *)
-val () = println!("\n", "s0rtcons")
-val () = to_schema_tag_foreach<s0rtcon_node>(s0rtcons)
+(* val () = to_schema_tag_foreach<s0rtcon_node>(s0rtcons) *)
+val scm_s0rtcon_node = make<s0rtcon_node>("s0rtcon_node", s0rtcons)
+val () = println!(scm_s0rtcon_node)
 //
 (*
 dummy_d0tsort
 dummy_d0tsortlst
 d0tsorts
 *)
-val () = println!("\n", "d0tsorts")
-val () = to_schema_tag_foreach<d0tsort_node>(d0tsorts)
+(* val () = to_schema_tag_foreach<d0tsort_node>(d0tsorts) *)
+val scm_d0tsort_node = make<d0tsort_node>("d0tsort_node", d0tsorts)
+val () = println!(scm_d0tsort_node)
 //
 (*
 dummy_s0rtdef
 s0rtdefs
 *)
-val () = println!("\n", "s0rtdefs")
-val () = to_schema_tag_foreach<s0rtdef_node>(s0rtdefs)
+(* val () = to_schema_tag_foreach<s0rtdef_node>(s0rtdefs) *)
+val scm_s0rtdef_node = make<s0rtdef_node>("s0rtdef_node", s0rtdefs)
+val () = println!(scm_s0rtdef_node)
 (*
 dummy_s0arg
 dummy_s0arglst
 s0args
 *)
-val () = println!("\n", "s0args")
-val () = to_schema_tag_foreach<s0arg_node>(s0args)
+(* val () = to_schema_tag_foreach<s0arg_node>(s0args) *)
+val scm_s0arg_node = make<s0arg_node>("s0arg_node", s0args)
+val () = println!(scm_s0arg_node)
 //
 (*
 dummy_s0marg
 dummy_s0marglst
 s0margs
 *)
-val () = println!("\n", "s0margs")
-val () = to_schema_tag_foreach<s0marg_node>(s0margs)
+(* val () = to_schema_tag_foreach<s0marg_node>(s0margs) *)
+val scm_s0marg_node = make<s0marg_node>("s0marg_node", s0margs)
+val () = println!(scm_s0marg_node)
 //
 (*
 dummy_t0arg
 dummy_t0arglst
 t0args
 *)
-val () = println!("\n", "t0args")
-val () = to_schema_tag_foreach<t0arg_node>(t0args)
+(* val () = to_schema_tag_foreach<t0arg_node>(t0args) *)
+val scm_t0arg_node = make<t0arg_node>("t0arg_node", t0args)
+val () = println!(scm_t0arg_node)
 //
 (*
 dummy_t0marg
 dummy_t0marglst
 t0margs
 *)
-val () = println!("\n", "t0margs")
-val () = to_schema_tag_foreach<t0marg_node>(t0margs)
+(* val () = to_schema_tag_foreach<t0marg_node>(t0margs) *)
+val scm_t0marg_node = make<t0marg_node>("t0marg_node", t0margs)
+val () = println!(scm_t0marg_node)
 //
 (*
 dummy_s0qua
 dummy_s0qualst
 s0quas
 *)
-val () = println!("\n", "s0quas")
-val () = to_schema_tag_foreach<s0qua_node>(s0quas)
+(* val () = to_schema_tag_foreach<s0qua_node>(s0quas) *)
+val scm_s0qua_node = make<s0qua_node>("s0qua_node", s0quas)
+val () = println!(scm_s0qua_node)
 //
 (*
 dummy_s0uni
 dummy_s0unilst
 s0unis
 *)
-val () = println!("\n", "s0unis")
-val () = to_schema_tag_foreach<s0uni_node>(s0unis)
+(* val () = to_schema_tag_foreach<s0uni_node>(s0unis) *)
+val scm_s0uni_node = make<s0uni_node>("s0uni_node", s0unis)
+val () = println!(scm_s0uni_node)
 //
 (*
 dummy_s0exp
@@ -1629,46 +1654,54 @@ dummy_s0explst
 dummy_s0expopt
 s0exps
 *)
-val () = println!("\n", "s0exps")
-val () = to_schema_tag_foreach<s0exp_node>(s0exps)
+(* val () = to_schema_tag_foreach<s0exp_node>(s0exps) *)
+val scm_s0exp_node = make<s0exp_node>("s0exp_node", s0exps)
+val () = println!(scm_s0exp_node)
 //
 //
 (*
 dummy_s0exp_RPAREN
 s0exp_RPARENs
 *)
-val () = println!("\n", "s0exp_RPARENs")
-val () = to_schema_tag_foreach<s0exp_RPAREN>(s0exp_RPARENs)
+(* val () = to_schema_tag_foreach<s0exp_RPAREN>(s0exp_RPARENs) *)
+val scm_s0exp_RPAREN = make<s0exp_RPAREN>("s0exp_RPAREN", s0exp_RPARENs)
+val () = println!(scm_s0exp_RPAREN)
 
 (*
 dummy_labs0exp_RBRACE
 labs0exp_RBRACEs
 *)
-val () = println!("\n", "labs0exp_RBRACEs")
-val () = to_schema_tag_foreach<labs0exp_RBRACE>(labs0exp_RBRACEs)
+(* val () = to_schema_tag_foreach<labs0exp_RBRACE>(labs0exp_RBRACEs) *)
+val scm_labs0exp_RBRACE = make<labs0exp_RBRACE>("labs0exp_RBRACE", labs0exp_RBRACEs)
+val () = println!(scm_labs0exp_RBRACE)
 
 (*
 dummy_effs0expopt
 effs0expopts
 *)
-val () = println!("\n", "effs0expopts")
-val () = to_schema_tag_foreach<effs0expopt>(effs0expopts)
+(* val () = to_schema_tag_foreach<effs0expopt>(effs0expopts) *)
+val scm_effs0expopt = make<effs0expopt>("effs0expopt", effs0expopts)
+val () = println!(scm_effs0expopt)
 
 (*
 dummy_d0atcon
 dummy_d0atconlst
 d0atcons
 *)
-val () = println!("\n", "d0atcons")
-val () = to_schema_tag_foreach<d0atcon_node>(d0atcons)
+(* val () = to_schema_tag_foreach<d0atcon_node>(d0atcons) *)
+val scm_d0atcon_node = make<d0atcon_node>("d0atcon_node", d0atcons)
+val () = println!(scm_d0atcon_node)
 //
 //
 (*
 dummy_d0atype
 d0atypes
 *)
-val () = println!("\n", "d0atypes")
-val () = to_schema_tag_foreach<d0atype_node>(d0atypes)
+(* val () = to_schema_tag_foreach<d0atype_node>(d0atypes) *)
+val scm_d0atype_node = make<d0atype_node>("d0atype_node", d0atypes)
+val () = println!(scm_d0atype_node)
+
+
 
 
 val () = println!("\n\n", "************* DYNEXP0", "\n")
@@ -1683,35 +1716,35 @@ val () = println!("\n", "d0claulst", "\n", schema(dummy_d0claulst))
 
 val () =
 (
-println!("\n", "q0arglst", "\n", schema(dummy_q0arglst));
-println!("\n", "sq0arglst", "\n", schema(dummy_sq0arglst));
-println!("\n", "ti0arglst", "\n", schema(dummy_ti0arglst));
-println!("\n", "a0typlst", "\n", schema(dummy_a0typlst));
-println!("\n", "q0arglst", "\n", schema(dummy_q0arglst));
-println!("\n", "f0arglst", "\n", schema(dummy_f0arglst));
-println!("\n", "d0patlst", "\n", schema(dummy_d0patlst));
-println!("\n", "labd0patlst", "\n", schema(dummy_labd0patlst));
-println!("\n", "d0explst", "\n", schema(dummy_d0explst));
-println!("\n", "d0gualst", "\n", schema(dummy_d0gualst));
-println!("\n", "d0patlst", "\n", schema(dummy_d0patlst));
-println!("\n", "d0claulst", "\n", schema(dummy_d0claulst));
-println!("\n", "v0aldeclist", "\n", schema(dummy_v0aldeclist));
-println!("\n", "v0ardeclist", "\n", schema(dummy_v0ardeclist));
-println!("\n", "f0undeclist", "\n", schema(dummy_f0undeclist));
-println!("\n", "d0cstdeclist", "\n", schema(dummy_d0cstdeclist));
-println!("\n", "d0eclist", "\n", schema(dummy_d0eclist))
-
+println!(schema(dummy_q0arglst));
+println!(schema(dummy_sq0arglst));
+println!(schema(dummy_ti0arglst));
+println!(schema(dummy_a0typlst));
+println!(schema(dummy_q0arglst));
+println!(schema(dummy_f0arglst));
+println!(schema(dummy_d0patlst));
+println!(schema(dummy_labd0patlst));
+println!(schema(dummy_d0explst));
+println!(schema(dummy_d0gualst));
+println!(schema(dummy_d0patlst));
+println!(schema(dummy_d0claulst));
+println!(schema(dummy_v0aldeclist));
+println!(schema(dummy_v0ardeclist));
+println!(schema(dummy_f0undeclist));
+println!(schema(dummy_d0cstdeclist));
+println!(schema(dummy_d0eclist))
 )
 where implement scm$lst<>() = true end
 
 
 val () =
 (
-println!("\n", "a0typopt", "\n", schema(dummy_a0typopt));
-println!("\n", "a0typlstopt", "\n", schema(dummy_a0typlstopt));
-println!("\n", "d0expopt", "\n", schema(dummy_d0expopt))
+println!(schema(dummy_a0typopt));
+println!(schema(dummy_a0typlstopt));
+println!(schema(dummy_d0expopt))
 )
 where implement scm$opt<>() = true end
+
 
 fun{a:type}
 showlst(str: string, x: List0(a)): void =
@@ -1762,34 +1795,42 @@ dummy_q0arg
 val () = println!("\n", "q0args")
 val () = to_schema_tag_foreach<q0arg_node>(q0args)
 *)
-val () = println!("\n", schema(dummy_q0arg))
+val () = println!(schema(dummy_q0arg))
 //
-val () = showlst<q0arg_node>("q0arg_node", q0args)
+(* val () = showlst<q0arg_node>("q0arg_node", q0args) *)
+val scm_q0arg_node = make<q0arg_node>("q0arg_node", q0args)
+val () = println!(scm_q0arg_node)
 //
 (*
 dummy_sq0arglst
 dummy_sq0arg
 sq0args
 *)
-val () = println!("\n", schema(dummy_sq0arg))
+val () = println!(schema(dummy_sq0arg))
 //
-val () = showlst<sq0arg_node>("sq0arg_node", sq0args)
+(* val () = showlst<sq0arg_node>("sq0arg_node", sq0args) *)
+val scm_sq0arg_node = make<sq0arg_node>("sq0arg_node", sq0args)
+val () = println!(scm_sq0arg_node)
 (*
 dummy_tq0arg
 dummy_tq0arglst
 tq0args
 *)
-val () = println!("\n", schema(dummy_tq0arg))
+val () = println!(schema(dummy_tq0arg))
 //
-val () = showlst<tq0arg_node>("tq0arg_node", tq0args)
+(* val () = showlst<tq0arg_node>("tq0arg_node", tq0args) *)
+val scm_tq0arg_node = make<tq0arg_node>("tq0arg_node", tq0args)
+val () = println!(scm_tq0arg_node)
 (*
 dummy_ti0arglst
 dummy_ti0arg
 ti0args
 *)
-val () = println!("\n", schema(dummy_ti0arg))
+val () = println!(schema(dummy_ti0arg))
 //
-val () = showlst<ti0arg_node>("ti0arg_node", ti0args)
+(* val () = showlst<ti0arg_node>("ti0arg_node", ti0args) *)
+val scm_ti0arg_node = make<ti0arg_node>("ti0arg_node", ti0args)
+val () = println!(scm_ti0arg_node)
 (*
 dummy_a0typlst
 dummy_a0typopt
@@ -1797,43 +1838,55 @@ dummy_a0typlstopt
 dummy_a0typ
 a0typs
 *)
-val () = println!("\n", schema(dummy_a0typ))
+val () = println!(schema(dummy_a0typ))
 //
-val () = showlst<a0typ_node>("a0typ_node", a0typs)
+(* val () = showlst<a0typ_node>("a0typ_node", a0typs) *)
+val scm_a0typ_node = make<a0typ_node>("a0typ_node", a0typs)
+val () = println!(scm_a0typ_node)
 (*
 dummy_d0arglst
 dummy_d0arg
 d0args
 *)
-val () = println!("\n", schema(dummy_d0arg))
+val () = println!(schema(dummy_d0arg))
 //
-val () = showlst<d0arg_node>("d0arg_node", d0args)
+(* val () = showlst<d0arg_node>("d0arg_node", d0args) *)
+val scm_d0arg_node = make<d0arg_node>("d0arg_node", d0args)
+val () = println!(scm_d0arg_node)
 (*
 dummy_f0arglst
 dummy_f0arg
 f0args
 *)
-val () = println!("\n", schema(dummy_f0arg))
+val () = println!(schema(dummy_f0arg))
 //
-val () = showlst<f0arg_node>("f0arg_node", f0args)
+(* val () = showlst<f0arg_node>("f0arg_node", f0args) *)
+val scm_f0arg_node = make<f0arg_node>("f0arg_node", f0args)
+val () = println!(scm_f0arg_node)
 (*
 dummy_labd0pat_RBRACE
 labd0pat_RBRACEs
 *)
-val () = showlst<labd0pat_RBRACE>("labd0pat_RBRACE", labd0pat_RBRACEs)
+(* val () = showlst<labd0pat_RBRACE>("labd0pat_RBRACE", labd0pat_RBRACEs) *)
+val scm_labd0pat_RBRACE = make<labd0pat_RBRACE>("labd0pat_RBRACE", labd0pat_RBRACEs)
+val () = println!(scm_labd0pat_RBRACE)
 (*
 dummy_d0pat_RPAREN
 d0pat_RPARENs
 *)
-val () = showlst<d0pat_RPAREN>("d0pat_RPAREN", d0pat_RPARENs)
+(* val () = showlst<d0pat_RPAREN>("d0pat_RPAREN", d0pat_RPARENs) *)
+val scm_d0pat_RPAREN = make<d0pat_RPAREN>("d0pat_RPAREN", d0pat_RPARENs)
+val () = println!(scm_d0pat_RPAREN)
 (*
 dummy_d0patlst
 dummy_d0pat
 d0pats
 *)
-val () = println!("\n", schema(dummy_d0pat))
+val () = println!(schema(dummy_d0pat))
 //
-val () = showlst<d0pat_node>("d0pat_node", d0pats)
+(* val () = showlst<d0pat_node>("d0pat_node", d0pats) *)
+val scm_d0pat_node = make<d0pat_node>("d0pat_node", d0pats)
+val () = println!(scm_d0pat_node)
 (*
 dummy_labd0patlst
 dummy_labd0pat
@@ -1843,46 +1896,62 @@ dummy_labd0pat
 dummy_d0exp_RPAREN
 d0exp_RPARENs
 *)
-val () = showlst<d0exp_RPAREN>("d0exp_RPAREN", d0exp_RPARENs)
+(* val () = showlst<d0exp_RPAREN>("d0exp_RPAREN", d0exp_RPARENs) *)
+val scm_d0exp_RPAREN = make<d0exp_RPAREN>("d0exp_RPAREN", d0exp_RPARENs)
+val () = println!(scm_d0exp_RPAREN)
 (*
 dummy_labd0exp_RBRACE
 labd0exp_RBRACEs
 *)
-val () = showlst<labd0exp_RBRACE>("labd0exp_RBRACE", labd0exp_RBRACEs)
+(* val () = showlst<labd0exp_RBRACE>("labd0exp_RBRACE", labd0exp_RBRACEs) *)
+val scm_labd0exp_RBRACE = make<labd0exp_RBRACE>("labd0exp_RBRACE", labd0exp_RBRACEs)
+val () = println!(scm_labd0exp_RBRACE)
 (*
 dummy_d0exp_THEN
 d0exp_THENs
 *)
-val () = showlst<d0exp_THEN>("d0exp_THEN", d0exp_THENs)
+(* val () = showlst<d0exp_THEN>("d0exp_THEN", d0exp_THENs) *)
+val scm_d0exp_THEN = make<d0exp_THEN>("d0exp_THEN", d0exp_THENs)
+val () = println!(scm_d0exp_THEN)
 (*
 dummy_d0exp_ELSE
 d0exp_ELSEs
 *)
-val () = showlst<d0exp_ELSE>("d0exp_ELSE", d0exp_ELSEs)
+(* val () = showlst<d0exp_ELSE>("d0exp_ELSE", d0exp_ELSEs) *)
+val scm_d0exp_ELSE = make<d0exp_ELSE>("d0exp_ELSE", d0exp_ELSEs)
+val () = println!(scm_d0exp_ELSE)
 (*
 dummy_endwhere
 endwheres
 *)
-val () = showlst<endwhere>("endwhere", endwheres)
+(* val () = showlst<endwhere>("endwhere", endwheres) *)
+val scm_endwhere = make<endwhere>("endwhere", endwheres)
+val () = println!(scm_endwhere)
 (*
 dummy_d0eclseq_WHERE
 d0eclseq_WHEREs
 *)
-val () = showlst<d0eclseq_WHERE>("d0eclseq_WHERE", d0eclseq_WHEREs)
+(* val () = showlst<d0eclseq_WHERE>("d0eclseq_WHERE", d0eclseq_WHEREs) *)
+val scm_d0eclseq_WHERE = make<d0eclseq_WHERE>("d0eclseq_WHERE", d0eclseq_WHEREs)
+val () = println!(scm_d0eclseq_WHERE)
 (*
 dummy_f0unarrow
 f0unarrows
 *)
-val () = showlst<f0unarrow>("f0unarrow", f0unarrows)
+(* val () = showlst<f0unarrow>("f0unarrow", f0unarrows) *)
+val scm_f0unarrow = make<f0unarrow>("f0unarrow", f0unarrows)
+val () = println!(scm_f0unarrow)
 (*
 dummy_d0explst
 dummy_d0expopt
 dummy_d0exp
 d0exps
 *)
-val () = println!("\n", schema(dummy_d0exp))
+val () = println!(schema(dummy_d0exp))
 //
-val () = showlst<d0exp_node>("d0exp_node", d0exps)
+(* val () = showlst<d0exp_node>("d0exp_node", d0exps) *)
+val scm_d0exp_node = make<d0exp_node>("d0exp_node", d0exps)
+val () = println!(scm_d0exp_node)
 (*
 dummy_labd0explst
 dummy_labd0exp
@@ -1893,40 +1962,52 @@ dummy_d0gualst
 dummy_d0gua
 d0guas
 *)
-val () = println!("\n", schema(dummy_d0gua))
+val () = println!(schema(dummy_d0gua))
 //
-val () = showlst<d0gua_node>("d0gua_node", d0guas)
+(* val () = showlst<d0gua_node>("d0gua_node", d0guas) *)
+val scm_d0gua_node = make<d0gua_node>("d0gua_node", d0guas)
+val () = println!(scm_d0gua_node)
 (*
 dummy_d0patlst
 dummy_d0gpat
 d0gpats
 *)
-val () = println!("\n", schema(dummy_d0gpat))
+val () = println!(schema(dummy_d0gpat))
 //
-val () = showlst<d0gpat_node>("d0gpat_node", d0gpats)
+(* val () = showlst<d0gpat_node>("d0gpat_node", d0gpats) *)
+val scm_d0gpat_node = make<d0gpat_node>("d0gpat_node", d0gpats)
+val () = println!(scm_d0gpat_node)
 (*
 dummy_d0claulst
 dummy_d0clau
 d0claus
 *)
-val () = println!("\n", schema(dummy_d0clau))
+val () = println!(schema(dummy_d0clau))
 //
-val () = showlst<d0clau_node>("d0clau_node", d0claus)
+(* val () = showlst<d0clau_node>("d0clau_node", d0claus) *)
+val scm_d0clau_node = make<d0clau_node>("d0clau_node", d0claus)
+val () = println!(scm_d0clau_node)
 (*
 dummy_decmodopt
 decmodopts
 *)
-val () = showlst<decmodopt>("decmodopt", decmodopts)
+(* val () = showlst<decmodopt>("decmodopt", decmodopts) *)
+val scm_decmodopt = make<decmodopt>("decmodopt", decmodopts)
+val () = println!(scm_decmodopt)
 (*
 dummy_teqd0expopt
 teqd0expopts
 *)
-val () = showlst<teqd0expopt>("teqd0expopt", teqd0expopts)
+(* val () = showlst<teqd0expopt>("teqd0expopt", teqd0expopts) *)
+val scm_teqd0expopt = make<teqd0expopt>("teqd0expopt", teqd0expopts)
+val () = println!(scm_teqd0expopt)
 (*
 dummy_wths0expopt
 wths0expopts
 *)
-val () = showlst<wths0expopt>("wths0expopt", wths0expopts)
+(* val () = showlst<wths0expopt>("wths0expopt", wths0expopts) *)
+val scm_wths0expopt = make<wths0expopt>("wths0expopt", wths0expopts)
+val () = println!(scm_wths0expopt)
 (*
 dummy_d0pidopt
 *)
@@ -1936,74 +2017,90 @@ dummy_v0aldecl
 dummy_v0aldeclist
 v0aldecls
 *)
-val () = showlst<v0aldecl>("v0aldecl", v0aldecls)
+(* val () = showlst<v0aldecl>("v0aldecl", v0aldecls) *)
+val scm_v0aldecl = make<v0aldecl>("v0aldecl", v0aldecls)
+val () = println!(scm_v0aldecl)
 (*
 dummy_v0ardecl
 dummy_v0ardeclist
 v0ardecls
 *)
-val () = showlst<v0ardecl>("v0ardecl", v0ardecls)
+(* val () = showlst<v0ardecl>("v0ardecl", v0ardecls) *)
+val scm_v0ardecl = make<v0ardecl>("v0ardecl", v0ardecls)
+val () = println!(scm_v0ardecl)
 (*
 dummy_f0undecl
 dummy_f0undeclist
 f0undecls
 *)
-val () = showlst<f0undecl>("f0undecl", f0undecls)
+(* val () = showlst<f0undecl>("f0undecl", f0undecls) *)
+val scm_f0undecl = make<f0undecl>("f0undecl", f0undecls)
+val () = println!(scm_f0undecl)
 (*
 dummy_d0cstdeclist
 dummy_d0cstdecl
 d0cstdecls
 *)
-val () = showlst<d0cstdecl>("d0cstdecl", d0cstdecls)
+(* val () = showlst<d0cstdecl>("d0cstdecl", d0cstdecls) *)
+val scm_d0cstdecl = make<d0cstdecl>("d0cstdecl", d0cstdecls)
+val () = println!(scm_d0cstdecl)
 (*
 dummy_signint
 signints
 *)
-val () = showlst<signint>("signint", signints)
+(* val () = showlst<signint>("signint", signints) *)
+val scm_signint = make<signint>("signint", signints)
+val () = println!(scm_signint)
 (*
 dummy_precmod
 precmods
 *)
-val () = showlst<precmod>("precmod", precmods)
+(* val () = showlst<precmod>("precmod", precmods) *)
+val scm_precmod = make<precmod>("precmod", precmods)
+val () = println!(scm_precmod)
 (*
 dummy_precopt
 precopts
 *)
-val () = showlst<precopt>("precopt", precopts)
+(* val () = showlst<precopt>("precopt", precopts) *)
+val scm_precopt = make<precopt>("precopt", precopts)
+val () = println!(scm_precopt)
 (*
 dummy_abstdf0
 abstdf0s
 *)
-val () = showlst<abstdf0>("abstdf0", abstdf0s)
+(* val () = showlst<abstdf0>("abstdf0", abstdf0s) *)
+val scm_abstdf0 = make<abstdf0>("abstdf0", abstdf0s)
+val () = println!(scm_abstdf0)
 (*
 dummy_g0expdef
 g0expdefs
 *)
 (* val () = showlst<g0expdef>("g0expdef", g0expdefs) *)
-val scm_tmp = make<g0expdef>("g0expdef", g0expdefs)
-val () = println!(scm_tmp)
+val scm_g0expdef = make<g0expdef>("g0expdef", g0expdefs)
+val () = println!(scm_g0expdef)
 (*
 dummy_d0macdef
 d0macdefs
 *)
 (* val () = showlst<d0macdef>("d0macdef", d0macdefs) *)
-val scm_tmp = make<d0macdef>("d0macdef", d0macdefs)
-val () = println!(scm_tmp)
+val scm_d0macdef = make<d0macdef>("d0macdef", d0macdefs)
+val () = println!(scm_d0macdef)
 (*
 dummy_wd0eclseq
 wd0eclseqs
 *)
-(* val () = println!("\n", schema(dummy_wd0eclseq)) *)
+(* val () = println!(schema(dummy_wd0eclseq)) *)
 //
 (* val () = showlst<wd0eclseq>("wd0eclseq", wd0eclseqs) *)
-val scm_tmp = make<wd0eclseq>("wd0eclseq", wd0eclseqs)
-val () = println!(scm_tmp)
+val scm_wd0eclseq = make<wd0eclseq>("wd0eclseq", wd0eclseqs)
+val () = println!(scm_wd0eclseq)
 (*
 dummy_d0eclist
 dummy_d0ecl
 d0ecls
 *)
-val () = println!("\n", schema(dummy_d0ecl))
+val () = println!(schema(dummy_d0ecl))
 val tmp = schema(dummy_d0ecl)
 (* val scm_d0ecl = make_namedscm<d0ecl>("d0ecl", list_sing(dummy_d0ecl)) *)
 (* val () = println!(scm_d0ecl) *)
@@ -2014,12 +2111,236 @@ val scm_d0ecl_node = make<d0ecl_node>("d0ecl_node", d0ecls)
 val () = println!(scm_d0ecl_node)
 
 
+
+
+(*
 val scm_tmp = make<tnode>("tnode", tnodes)
 val () = println!(scm_tmp)
+*)
 
 
-val () = println!("\n", schema(dummy_tq0arg))
+(* val () = println!(schema(dummy_tq0arg)) *)
+
+val () = println!()
+
+
+val simple = $list{scmrec}
+(
+schema(dummy_symbol),
+schema(dummy_stamp),
+schema(dummy_loc),
+schema(dummy_filpath)
+)
+
+val basics = $list{namedscm}
+(
+scm_label,
+scm_valkind,
+scm_funkind,
+scm_impkind,
+scm_funclo2
+)
+
+val tokens0_0 = $list{scmrec}
+(
+schema(dummy_token),
+schema(dummy_tokenopt)
+)
+
+val tokens0 = $list{namedscm}
+(
+scm_tnode
+)
+
+val staexp0s_0 = $list{scmrec}
+(
+schema(dummy_t0int),
+schema(dummy_t0chr),
+schema(dummy_t0flt),
+schema(dummy_t0str),
+schema(dummy_i0dnt),
+schema(dummy_l0abl),
+schema(dummy_s0ymb),
+schema(dummy_g0exp),
+schema(dummy_g0marg),
+schema(dummy_sort0),
+schema(dummy_s0rtcon),
+schema(dummy_d0tsort),
+schema(dummy_s0rtdef),
+schema(dummy_s0arg),
+schema(dummy_s0marg),
+schema(dummy_t0arg),
+schema(dummy_t0marg),
+schema(dummy_s0qua),
+schema(dummy_s0uni),
+schema(dummy_s0exp),
+schema(dummy_d0atcon),
+schema(dummy_d0atype),
+//
+schema(dummy_g0explst),
+schema(dummy_sort0lst),
+schema(dummy_s0rtconlst),
+schema(dummy_d0tsortlst),
+schema(dummy_s0arglst),
+schema(dummy_s0marglst),
+schema(dummy_t0arglst),
+schema(dummy_t0marglst),
+schema(dummy_s0qualst),
+schema(dummy_s0unilst),
+schema(dummy_s0explst),
+schema(dummy_d0atconlst),
+schema(dummy_s0expopt)
+
+)
+
+
+
+val staexp0s = $list{namedscm}
+(
+scm_t0int_node,
+scm_t0chr_node,
+scm_t0flt_node,
+scm_t0str_node,
+scm_i0dnt_node,
+scm_l0abl_node,
+scm_s0ymb_node,
+scm_dq0eid,
+scm_g0exp_node,
+scm_g0marg_node,
+scm_sort0_node,
+scm_s0rtcon_node,
+scm_d0tsort_node,
+scm_s0rtdef_node,
+scm_s0arg_node,
+scm_s0marg_node,
+scm_t0arg_node,
+scm_t0marg_node,
+scm_s0qua_node,
+scm_s0uni_node,
+scm_s0exp_node,
+scm_s0exp_RPAREN,
+scm_labs0exp_RBRACE,
+scm_effs0expopt,
+scm_d0atcon_node,
+scm_d0atype_node
+)
+
+
+val dynexp0s_0 = $list{scmrec}
+(
+schema(dummy_q0arglst),
+schema(dummy_sq0arglst),
+schema(dummy_ti0arglst),
+schema(dummy_a0typlst),
+schema(dummy_q0arglst),
+schema(dummy_f0arglst),
+schema(dummy_d0patlst),
+schema(dummy_labd0patlst),
+schema(dummy_d0explst),
+schema(dummy_d0gualst),
+schema(dummy_d0patlst),
+schema(dummy_d0claulst),
+schema(dummy_v0aldeclist),
+schema(dummy_v0ardeclist),
+schema(dummy_f0undeclist),
+schema(dummy_d0cstdeclist),
+schema(dummy_d0eclist),
+schema(dummy_a0typopt),
+schema(dummy_a0typlstopt),
+schema(dummy_d0expopt)
+)
+
+val dynexp0s = $list{namedscm}
+(
+scm_q0arg_node,
+scm_sq0arg_node,
+scm_tq0arg_node,
+scm_ti0arg_node,
+scm_a0typ_node,
+scm_d0arg_node,
+scm_f0arg_node,
+scm_labd0pat_RBRACE,
+scm_d0pat_RPAREN,
+scm_d0pat_node,
+scm_d0exp_RPAREN,
+scm_labd0exp_RBRACE,
+scm_d0exp_THEN,
+scm_endwhere,
+scm_d0eclseq_WHERE,
+scm_f0unarrow,
+scm_d0exp_node,
+scm_d0gua_node,
+scm_d0gpat_node,
+scm_d0clau_node,
+scm_decmodopt,
+scm_teqd0expopt,
+scm_wths0expopt,
+scm_v0aldecl,
+scm_v0ardecl,
+scm_f0undecl,
+scm_d0cstdecl,
+scm_signint,
+scm_precmod,
+scm_precopt,
+scm_abstdf0,
+scm_g0expdef,
+scm_d0macdef,
+scm_wd0eclseq,
+scm_d0ecl_node
+)
+
+
+fun{a:t@ype} foreach_comma(out: FILEref, xs: List0(a)): void =
+{
+  val x = (
+  list_iforeach<a>(xs) where
+    implement(env)
+    list_iforeach$fwork<a><env>(i, x, env) =
+      (
+        (if i > 0 then fprint!(out, ", "));
+        fprint_val<a>(out, x)
+      )
+  end
+  )
 }
+
+val theout = stdout_ref
+
+reassume ret_list_type_t
+
+val () =
+{
+val () = fprint!(theout, "{")
+val () = foreach_comma<scmrec>(theout, simple)
+val () = fprint!(theout, ",")
+val () = foreach_comma<namedscm>(theout, basics)
+val () = fprint!(theout, ",")
+val () = foreach_comma<scmrec>(theout, tokens0_0)
+val () = fprint!(theout, ",")
+val () = foreach_comma<namedscm>(theout, tokens0)
+val () = fprint!(theout, ",")
+val () = foreach_comma<namedscm>(theout, staexp0s)
+val () = fprint!(theout, ",")
+val () = foreach_comma<scmrec>(theout, staexp0s_0)
+val () = fprint!(theout, ",")
+val () = foreach_comma<namedscm>(theout, dynexp0s)
+val () = fprint!(theout, ",")
+val () = foreach_comma<scmrec>(theout, dynexp0s_0)
+val () = fprint!(theout, "}")
+}
+val () = println!()
+
+(* val () = println!(dummy_s0arg) *)
+(*
+val dummy_s0arg = s0arg_make_node(dummy_loc, S0ARGnone(dummy_token))
+val () = println!(nameof_s0arg_node(dummy_s0arg.node()))
+val () = println!(nameof_s0arg(dummy_s0arg))
+val xs = schema_s0arg(dummy_s0arg)
+val () = println!(xs.args)
+*)
+
+}
+
 
 (*
 dummy_token
