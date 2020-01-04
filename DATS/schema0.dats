@@ -2228,6 +2228,19 @@ scm_d0atype_node
 
 val dynexp0s_0 = $list{scmrec}
 (
+schema(dummy_q0arg),
+schema(dummy_sq0arg),
+schema(dummy_tq0arg),
+schema(dummy_ti0arg),
+schema(dummy_a0typ),
+schema(dummy_d0arg),
+schema(dummy_f0arg),
+schema(dummy_d0pat),
+schema(dummy_d0exp),
+schema(dummy_d0gua),
+schema(dummy_d0gpat),
+schema(dummy_d0clau),
+schema(dummy_d0ecl),
 schema(dummy_q0arglst),
 schema(dummy_sq0arglst),
 schema(dummy_ti0arglst),
@@ -2290,6 +2303,11 @@ scm_d0ecl_node
 )
 
 
+reassume ret_list_type_t
+
+val filpt0 = $STDIO.fopen("./out/schema0.json", file_mode_w)
+val theout = $UN.castvwtp0{FILEref}(filpt0)
+
 fun{a:t@ype} foreach_comma(out: FILEref, xs: List0(a)): void =
 {
   val x = (
@@ -2297,38 +2315,38 @@ fun{a:t@ype} foreach_comma(out: FILEref, xs: List0(a)): void =
     implement(env)
     list_iforeach$fwork<a><env>(i, x, env) =
       (
-        (if i > 0 then fprint!(out, ", "));
+        (if i > 0 then fprint_string(out, ", "));
         fprint_val<a>(out, x)
       )
   end
   )
 }
 
-val theout = stdout_ref
-
-reassume ret_list_type_t
+(* val theout = stdout_ref *)
 
 val () =
-{
-val () = fprint!(theout, "{")
-val () = foreach_comma<scmrec>(theout, simple)
-val () = fprint!(theout, ",")
-val () = foreach_comma<namedscm>(theout, basics)
-val () = fprint!(theout, ",")
-val () = foreach_comma<scmrec>(theout, tokens0_0)
-val () = fprint!(theout, ",")
-val () = foreach_comma<namedscm>(theout, tokens0)
-val () = fprint!(theout, ",")
-val () = foreach_comma<namedscm>(theout, staexp0s)
-val () = fprint!(theout, ",")
-val () = foreach_comma<scmrec>(theout, staexp0s_0)
-val () = fprint!(theout, ",")
-val () = foreach_comma<namedscm>(theout, dynexp0s)
-val () = fprint!(theout, ",")
-val () = foreach_comma<scmrec>(theout, dynexp0s_0)
-val () = fprint!(theout, "}")
-}
+(
+  fprint_string(theout, "{");
+  foreach_comma<scmrec>(theout, simple);
+  fprint_string(theout, ",");
+  foreach_comma<namedscm>(theout, basics);
+  fprint_string(theout, ",");
+  foreach_comma<scmrec>(theout, tokens0_0);
+  fprint_string(theout, ",");
+  foreach_comma<namedscm>(theout, tokens0);
+  fprint_string(theout, ",");
+  foreach_comma<namedscm>(theout, staexp0s);
+  fprint_string(theout, ",");
+  foreach_comma<scmrec>(theout, staexp0s_0);
+  fprint_string(theout, ",");
+  foreach_comma<namedscm>(theout, dynexp0s);
+  fprint_string(theout, ",");
+  foreach_comma<scmrec>(theout, dynexp0s_0);
+  fprint_string(theout, "}");
+  fprint_string(theout, "\n")
+)
 val () = println!()
+val err = $STDIO.fclose0(theout)
 
 (* val () = println!(dummy_s0arg) *)
 (*

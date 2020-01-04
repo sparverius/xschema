@@ -212,16 +212,16 @@ end
 implement{}
 fprint_namedscm(out, xs) =
 {
-  val () = print!("\"", xs.name, "\"", ":", "{")
+  val () = fprint!(out, "\"", xs.name, "\"", ":", "{")
   (* val () = print!("{", "\"", xs.name, "\"", ":", "{") *)
   val () = scmrec_foreach<>(xs.list) where
     implement
-    scmrec_foreach$sep<>() = print!(",")
+    scmrec_foreach$sep<>() = fprint!(out, ",")
     implement
-    scmrec_foreach$fwork<>(x) = print!(x)
+    scmrec_foreach$fwork<>(x) = fprint!(out, x)
   end
   (* val () = print!("}}") *)
-  val () = print!("}")
+  val () = fprint!(out, "}")
 } where
   implement
   fprint_scmrec<>(out, styp) =
