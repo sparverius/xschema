@@ -466,11 +466,11 @@
       "t0int"
     ],
     "G0Eapps": [
-      "g0exp"
+      "g0explst"
     ],
     "G0Elist": [
       "token",
-      "g0exp",
+      "g0explst",
       "token"
     ],
     "G0Enone": [
@@ -483,12 +483,12 @@
     ],
     "G0MARGsarg": [
       "token",
-      "i0dnt",
+      "i0dntlst",
       "token"
     ],
     "G0MARGdarg": [
       "token",
-      "i0dnt",
+      "i0dntlst",
       "token"
     ]
   },
@@ -500,11 +500,11 @@
       "t0int"
     ],
     "S0Tapps": [
-      "s0rt0"
+      "s0rt0lst"
     ],
     "S0Tlist": [
       "token",
-      "s0rt0",
+      "s0rt0lst",
       "token"
     ],
     "S0Tqual": [
@@ -518,14 +518,14 @@
   "s0rtcon_node": {
     "S0RTCON": [
       "i0dnt",
-      "sort0"
+      "sort0opt"
     ]
   },
   "d0tsort_node": {
     "D0TSORT": [
       "i0dnt",
       "token",
-      "s0rtcon"
+      "s0rtconlst"
     ]
   },
   "s0rtdef_node": {
@@ -536,7 +536,7 @@
       "token",
       "s0arg",
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ]
   },
@@ -546,7 +546,7 @@
     ],
     "S0ARGsome": [
       "i0dnt",
-      "sort0"
+      "sort0opt"
     ]
   },
   "s0marg_node": {
@@ -558,7 +558,7 @@
     ],
     "S0MARGlist": [
       "token",
-      "s0arg",
+      "s0arglst",
       "token"
     ]
   },
@@ -574,7 +574,7 @@
     ],
     "T0MARGlist": [
       "token",
-      "t0arg",
+      "t0arglst",
       "token"
     ]
   },
@@ -583,8 +583,8 @@
       "s0exp"
     ],
     "S0QUAvars": [
-      "i0dnt",
-      "sort0"
+      "i0dntlst",
+      "sort0opt"
     ]
   },
   "s0uni_node": {
@@ -593,7 +593,7 @@
     ],
     "S0UNIsome": [
       "token",
-      "s0qua",
+      "s0qualst",
       "token"
     ]
   },
@@ -622,44 +622,44 @@
       "t0str"
     ],
     "S0Eapps": [
-      "s0exp"
+      "s0explst"
     ],
     "S0Eimp": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ],
     "S0Eparen": [
       "token",
-      "s0exp",
+      "s0explst",
       "s0exp_RPAREN"
     ],
     "S0Etuple": [
       "token",
       "token",
-      "s0exp",
+      "s0explst",
       "s0exp_RPAREN"
     ],
     "S0Erecord": [
       "token",
       "token",
-      "labs0exp",
+      "labs0explst",
       "labs0exp_RBRACE"
     ],
     "S0Eforall": [
       "token",
-      "s0qua",
+      "s0qualst",
       "token"
     ],
     "S0Eexists": [
       "token",
-      "s0qua",
+      "s0qualst",
       "token"
     ],
     "S0Elam": [
       "token",
-      "s0marg",
-      "sort0",
+      "s0marglst",
+      "sort0opt",
       "token",
       "s0exp",
       "token"
@@ -682,7 +682,7 @@
     ],
     "s0exp_RPAREN_cons1": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ]
   },
@@ -692,7 +692,7 @@
     ],
     "labs0exp_RBRACE_cons1": [
       "token",
-      "labs0exp",
+      "labs0explst",
       "token"
     ]
   },
@@ -704,19 +704,19 @@
   },
   "d0atcon_node": {
     "D0ATCON": [
-      "s0uni",
+      "s0unilst",
       "i0dnt",
-      "s0exp",
-      "s0exp"
+      "s0explst",
+      "s0expopt"
     ]
   },
   "d0atype_node": {
     "D0ATYPE": [
       "i0dnt",
-      "t0marg",
-      "sort0",
+      "t0marglst",
+      "sort0opt",
       "token",
-      "d0atcon"
+      "d0atconlst"
     ]
   },
   "t0int": [
@@ -827,7 +827,7 @@
   "q0arg_node": {
     "Q0ARGsome": [
       "i0dnt",
-      "sort0"
+      "sort0opt"
     ]
   },
   "sq0arg_node": {
@@ -836,7 +836,7 @@
     ],
     "SQ0ARGsome": [
       "token",
-      "q0arg",
+      "q0arglst",
       "token"
     ]
   },
@@ -846,7 +846,7 @@
     ],
     "TQ0ARGsome": [
       "token",
-      "q0arg",
+      "q0arglst",
       "token"
     ]
   },
@@ -856,7 +856,7 @@
     ],
     "TI0ARGsome": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ]
   },
@@ -872,7 +872,7 @@
     ],
     "D0ARGsome_sta": [
       "token",
-      "s0qua",
+      "s0qualst",
       "token"
     ],
     "D0ARGsome_dyn1": [
@@ -880,8 +880,8 @@
     ],
     "D0ARGsome_dyn2": [
       "token",
-      "a0typ",
       "a0typlst",
+      "a0typlstopt",
       "token"
     ]
   },
@@ -894,12 +894,12 @@
     ],
     "F0ARGsome_sta": [
       "token",
-      "s0qua",
+      "s0qualst",
       "token"
     ],
     "F0ARGsome_met": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ]
   },
@@ -909,7 +909,7 @@
     ],
     "labd0pat_RBRACE_cons1": [
       "token",
-      "labd0pat",
+      "labd0patlst",
       "token"
     ]
   },
@@ -919,7 +919,7 @@
     ],
     "d0pat_RPAREN_cons1": [
       "token",
-      "d0pat",
+      "d0patlst",
       "token"
     ]
   },
@@ -940,28 +940,28 @@
       "t0str"
     ],
     "D0Papps": [
-      "d0pat"
+      "d0patlst"
     ],
     "D0Psqarg": [
       "token",
-      "s0arg",
+      "s0arglst",
       "token"
     ],
     "D0Pparen": [
       "token",
-      "d0pat",
+      "d0patlst",
       "d0pat_RPAREN"
     ],
     "D0Ptuple": [
       "token",
       "token",
-      "d0pat",
+      "d0patlst",
       "d0pat_RPAREN"
     ],
     "D0Precord": [
       "token",
       "token",
-      "labd0pat",
+      "labd0patlst",
       "labd0pat_RBRACE"
     ],
     "D0Panno": [
@@ -982,12 +982,12 @@
     ],
     "d0exp_RPAREN_cons1": [
       "token",
-      "d0exp",
+      "d0explst",
       "token"
     ],
     "d0exp_RPAREN_cons2": [
       "token",
-      "d0exp",
+      "d0explst",
       "token"
     ]
   },
@@ -997,7 +997,7 @@
     ],
     "labd0exp_RBRACE_cons1": [
       "token",
-      "labd0exp",
+      "labd0explst",
       "token"
     ]
   },
@@ -1020,7 +1020,7 @@
     "d0eclseq_WHERE": [
       "token",
       "token",
-      "d0ecl",
+      "d0eclist",
       "endwhere"
     ]
   },
@@ -1033,7 +1033,7 @@
     ],
     "F0UNARROWlist": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ]
   },
@@ -1054,33 +1054,33 @@
       "t0str"
     ],
     "D0Eapps": [
-      "d0exp"
+      "d0explst"
     ],
     "D0Esqarg": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ],
     "D0Etqarg": [
       "token",
-      "s0exp",
+      "s0explst",
       "token"
     ],
     "D0Eparen": [
       "token",
-      "d0exp",
+      "d0explst",
       "d0exp_RPAREN"
     ],
     "D0Etuple": [
       "token",
       "token",
-      "d0exp",
+      "d0explst",
       "d0exp_RPAREN"
     ],
     "D0Erecord": [
       "token",
       "token",
-      "labd0exp",
+      "labd0explst",
       "labd0exp_RBRACE"
     ],
     "D0Eif0": [
@@ -1095,14 +1095,14 @@
       "d0exp",
       "token",
       "token",
-      "d0clau",
+      "d0claulst",
       "token"
     ],
     "D0Elet": [
       "token",
-      "d0ecl",
+      "d0eclist",
       "token",
-      "d0exp",
+      "d0explst",
       "token"
     ],
     "D0Ewhere": [
@@ -1111,17 +1111,17 @@
     ],
     "D0Ebrack": [
       "token",
-      "d0exp",
+      "d0explst",
       "token"
     ],
     "D0Edtsel": [
       "token",
       "l0abl",
-      "d0exp"
+      "d0expopt"
     ],
     "D0Elam": [
       "token",
-      "f0arg",
+      "f0arglst",
       "effs0expopt",
       "f0unarrow",
       "d0exp",
@@ -1130,7 +1130,7 @@
     "D0Efix": [
       "token",
       "i0dnt",
-      "f0arg",
+      "f0arglst",
       "effs0expopt",
       "f0unarrow",
       "d0exp",
@@ -1165,7 +1165,7 @@
     "D0GPATgua": [
       "d0pat",
       "token",
-      "d0gua"
+      "d0gualst"
     ]
   },
   "d0clau_node": {
@@ -1187,7 +1187,7 @@
     "DECMODlist": [
       "token",
       "token",
-      "i0dnt",
+      "i0dntlst",
       "token"
     ]
   },
@@ -1209,32 +1209,32 @@
     "V0ALDECL": [
       "d0pat",
       "token",
-      "d0exp",
+      "d0expopt",
       "wths0expopt"
     ]
   },
   "v0ardecl": {
     "V0ARDECL": [
       "i0dnt",
-      "i0dnt",
-      "s0exp",
+      "i0dntopt",
+      "s0expopt",
       "teqd0expopt"
     ]
   },
   "f0undecl": {
     "F0UNDECL": [
       "i0dnt",
-      "f0arg",
+      "f0arglst",
       "effs0expopt",
       "token",
-      "d0exp",
+      "d0expopt",
       "wths0expopt"
     ]
   },
   "d0cstdecl": {
     "D0CSTDECL": [
       "i0dnt",
-      "d0arg",
+      "d0arglst",
       "effs0expopt",
       "teqd0expopt"
     ]
@@ -1296,7 +1296,7 @@
     "WD0CSsome": [
       "token",
       "token",
-      "d0ecl",
+      "d0eclist",
       "token"
     ]
   },
@@ -1309,11 +1309,11 @@
     ],
     "D0Cnonfix": [
       "token",
-      "i0dnt"
+      "i0dntlst"
     ],
     "D0Cfixity": [
       "token",
-      "i0dnt",
+      "i0dntlst",
       "precopt"
     ],
     "D0Cstatic": [
@@ -1327,13 +1327,13 @@
     "D0Cdefine": [
       "token",
       "i0dnt",
-      "g0marg",
+      "g0marglst",
       "g0expdef"
     ],
     "D0Cmacdef": [
       "token",
       "i0dnt",
-      "g0marg",
+      "g0marglst",
       "d0macdef"
     ],
     "D0Cinclude": [
@@ -1351,7 +1351,7 @@
     "D0Cstacst0": [
       "token",
       "i0dnt",
-      "t0marg",
+      "t0marglst",
       "token",
       "sort0"
     ],
@@ -1364,50 +1364,50 @@
     "D0Csexpdef": [
       "token",
       "i0dnt",
-      "s0marg",
-      "sort0",
+      "s0marglst",
+      "sort0opt",
       "token",
       "s0exp"
     ],
     "D0Cabstype": [
       "token",
       "i0dnt",
-      "t0marg",
-      "sort0",
+      "t0marglst",
+      "sort0opt",
       "abstdf0"
     ],
     "D0Cabsimpl": [
       "token",
       "sq0eid",
-      "s0marg",
-      "sort0",
+      "s0marglst",
+      "sort0opt",
       "token",
       "s0exp"
     ],
     "D0Cvaldecl": [
       "token",
       "decmodopt",
-      "v0aldecl"
+      "v0aldeclist"
     ],
     "D0Cvardecl": [
       "token",
       "decmodopt",
-      "v0ardecl"
+      "v0ardeclist"
     ],
     "D0Cfundecl": [
       "token",
       "decmodopt",
-      "tq0arg",
-      "f0undecl"
+      "tq0arglst",
+      "f0undeclist"
     ],
     "D0Cimpdecl": [
       "token",
       "decmodopt",
-      "sq0arg",
-      "tq0arg",
+      "sq0arglst",
+      "tq0arglst",
       "dq0eid",
-      "ti0arg",
-      "f0arg",
+      "ti0arglst",
+      "f0arglst",
       "effs0expopt",
       "token",
       "d0exp"
@@ -1417,27 +1417,27 @@
       "s0ymb",
       "token",
       "dq0eid",
-      "t0int"
+      "t0intopt"
     ],
     "D0Cdatasort": [
       "token",
-      "d0tsort"
+      "d0tsortlst"
     ],
     "D0Cdatatype": [
       "token",
-      "d0atype",
+      "d0atypelst",
       "wd0eclseq"
     ],
     "D0Cdynconst": [
       "token",
-      "tq0arg",
-      "d0cstdecl"
+      "tq0arglst",
+      "d0cstdeclist"
     ],
     "D0Clocal": [
       "token",
-      "d0ecl",
+      "d0eclist",
       "token",
-      "d0ecl",
+      "d0eclist",
       "token"
     ]
   },
@@ -1492,6 +1492,9 @@
   "a0typlst": [
     "a0typ"
   ],
+  "q0arglst": [
+    "q0arg"
+  ],
   "f0arglst": [
     "f0arg"
   ],
@@ -1506,6 +1509,9 @@
   ],
   "d0gualst": [
     "d0gua"
+  ],
+  "d0patlst": [
+    "d0pat"
   ],
   "d0claulst": [
     "d0clau"
